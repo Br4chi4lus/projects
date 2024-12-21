@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "user" ALTER COLUMN "dateOfRegistration" SET DEFAULT CURRENT_TIMESTAMP;
