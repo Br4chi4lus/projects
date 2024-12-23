@@ -14,5 +14,15 @@ model User {
   lastName String
   dateOfBirth DateTime
   dateOfRegistration DateTime @default(now())
+  passwordHash String
+  roleId Int @default(3)
+  role Role @relation(fields: [roleId], references: [id])
   @@map("user")
+}
+
+model Role {
+  id Int @default(autoincrement()) @id
+  role String
+  users User[]
+  @@map("role")
 }

@@ -3,6 +3,8 @@ import { PrismaService } from '../prisma.service';
 import { UsersService } from './users.service';
 import { UserEntity } from './entities/user.entity';
 import { UserDTO } from './dtos/user.dto';
+import { RoleEntity } from './entities/role.entity';
+import { RoleDTO } from './dtos/role.dto';
 
 describe('UsersController', () => {
   let controller: UsersController;
@@ -22,7 +24,17 @@ describe('UsersController', () => {
         .spyOn(usersService, 'findAll')
         .mockImplementationOnce(() =>
           Promise.resolve([
-            new UserEntity(1, 'abc@example.com', 'john', 'doe', date, date),
+            new UserEntity(
+              1,
+              'abc@example.com',
+              'john',
+              'doe',
+              date,
+              date,
+              'abc',
+              1,
+              new RoleEntity(1, 'Admin'),
+            ),
           ]),
         );
 
@@ -30,7 +42,14 @@ describe('UsersController', () => {
 
       expect(response.length).toBe(1);
       expect(response[0]).toEqual(
-        new UserDTO(1, 'abc@example.com', 'john', 'doe', date),
+        new UserDTO(
+          1,
+          'abc@example.com',
+          'john',
+          'doe',
+          date,
+          new RoleDTO('Admin'),
+        ),
       );
     });
 
