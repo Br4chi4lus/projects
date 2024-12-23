@@ -1,11 +1,15 @@
+import { RoleEntity } from './role.entity';
+
 export class UserEntity {
   id: number;
   email: string;
+  passwordHash: string;
   firstName: string;
   lastName: string;
   dateOfBirth: Date;
   dateOfRegistration: Date;
-
+  roleId: number;
+  role: RoleEntity;
   constructor(
     id: number,
     email: string,
@@ -13,6 +17,9 @@ export class UserEntity {
     lastName: string,
     dateOfBirth: Date,
     dateOfRegistration: Date,
+    passwordHash: string,
+    roleId: number,
+    role: RoleEntity,
   ) {
     this.id = id;
     this.email = email;
@@ -20,5 +27,8 @@ export class UserEntity {
     this.lastName = lastName;
     this.dateOfBirth = dateOfBirth;
     this.dateOfRegistration = dateOfRegistration;
+    this.passwordHash = passwordHash;
+    this.roleId = roleId;
+    this.role = role;
   }
 }
