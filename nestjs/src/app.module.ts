@@ -8,9 +8,10 @@ import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './auth/guards/roles.guard';
 import { PassportModule } from '@nestjs/passport';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
+import { ProjectsModule } from './projects/projects.module';
 
 @Module({
-  imports: [UsersModule, TasksModule, AuthModule],
+  imports: [UsersModule, TasksModule, AuthModule, ProjectsModule],
   controllers: [AppController],
   providers: [AppService],
 })

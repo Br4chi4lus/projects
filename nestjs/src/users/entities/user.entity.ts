@@ -1,4 +1,5 @@
 import { RoleEntity } from './role.entity';
+import { Role, User } from '@prisma/client';
 
 export class UserEntity {
   id: number;
@@ -30,5 +31,19 @@ export class UserEntity {
     this.passwordHash = passwordHash;
     this.roleId = roleId;
     this.role = role;
+  }
+
+  public static fromModel(model: User & { role: Role }): UserEntity {
+    return new UserEntity(
+      model.id,
+      model.email,
+      model.firstName,
+      model.lastName,
+      model.dateOfBirth,
+      model.dateOfRegistration,
+      model.passwordHash,
+      model.roleId,
+      RoleEntity.fromModel(model.role),
+    );
   }
 }
