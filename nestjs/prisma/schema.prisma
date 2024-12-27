@@ -15,6 +15,8 @@ model User {
   dateOfBirth DateTime
   dateOfRegistration DateTime @default(now())
   passwordHash String
+  managedProjects Project[] @relation(name: "createdBy")
+  projects Project[] @relation(name: "developedBy")
   roleId Int @default(3)
   role Role @relation(fields: [roleId], references: [id])
   @@map("user")
@@ -25,4 +27,25 @@ model Role {
   role String
   users User[]
   @@map("role")
+}
+
+model Project {
+  id Int @default(autoincrement()) @id
+  name String
+  description String
+  managerId Int
+  manager User @relation(fields: [managerId], references: [id], name: "createdBy")
+  users User[] @relation(name: "developedBy")
+  dateOfCreation DateTime @default(now())
+  dateOfModified DateTime @default(now())
+  stateId Int @default(1)
+  state StateOfProject @relation(fields: [stateId], references: [id])
+  @@map("project")
+}
+
+model StateOfProject {
+  id Int @default(autoincrement()) @id
+  state String
+  projects Project[]
+  @@map("stateofproject")
 }
