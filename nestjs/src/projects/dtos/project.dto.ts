@@ -1,6 +1,7 @@
 import { UserDTO } from '../../users/dtos/user.dto';
 import { ProjectEntity } from '../entities/project.entity';
 import { StateOfProjectDTO } from './state-of-project.dto';
+import { TaskDTO } from '../../tasks/dtos/task.dto';
 
 export class ProjectDTO {
   id: number;
@@ -10,6 +11,8 @@ export class ProjectDTO {
   users: UserDTO[];
   state: StateOfProjectDTO;
   dateOfCreation: Date;
+  dateOfModified: Date;
+  tasks: TaskDTO[];
 
   constructor(
     id: number,
@@ -19,6 +22,8 @@ export class ProjectDTO {
     users: UserDTO[],
     state: StateOfProjectDTO,
     dateOfCreation: Date,
+    dateOfModified: Date,
+    tasks: TaskDTO[],
   ) {
     this.id = id;
     this.name = name;
@@ -27,6 +32,8 @@ export class ProjectDTO {
     this.users = users;
     this.state = state;
     this.dateOfCreation = dateOfCreation;
+    this.dateOfModified = dateOfModified;
+    this.tasks = tasks;
   }
 
   public static fromEntity(projectEntity: ProjectEntity): ProjectDTO {
@@ -38,6 +45,8 @@ export class ProjectDTO {
       projectEntity.users.map((user) => UserDTO.fromEntity(user)),
       projectEntity.state,
       projectEntity.dateOfCreation,
+      projectEntity.dateOfModified,
+      projectEntity.tasks.map((task) => TaskDTO.fromEntity(task)),
     );
   }
 }
