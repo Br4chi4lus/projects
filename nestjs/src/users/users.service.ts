@@ -99,4 +99,27 @@ export class UsersService {
       }
     }
   }
+
+  async changePassword(
+    passwordHash: string,
+    userId: number,
+  ): Promise<UserEntity> {
+    const user = await this.prismaService.user.update({
+      where: {
+        id: userId,
+      },
+      data: {
+        passwordHash: passwordHash,
+      },
+      include: {
+        role: true,
+      },
+    });
+
+    if (!user) {
+      throw new NotFoundException('User does not exist');
+    }
+
+    return UserEntity.fromModel(user);
+  }
 }

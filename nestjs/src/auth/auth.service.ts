@@ -6,6 +6,7 @@ import {
 import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
+import { UserEntity } from '../users/entities/user.entity';
 
 @Injectable()
 export class AuthService {
@@ -61,6 +62,21 @@ export class AuthService {
       dateOfBirth,
       await bcrypt.hash(password, 10),
     );
+    return user;
+  }
+
+  async changePassword(
+    password: string,
+    passwordConfirmation: string,
+    userId: number,
+  ): Promise<UserEntity> {
+    if (password !== passwordConfirmation) {
+      throw new BadRequestException('Passwords do not match');
+    }
+
+    const passwordHash = await bcrypt.hash(password, 10);
+    const user = this.usersService.changePassword(passwordHash, userId);
+
     return user;
   }
 }
