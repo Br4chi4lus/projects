@@ -122,4 +122,21 @@ export class UsersService {
 
     return UserEntity.fromModel(user);
   }
+
+  async findOneById(id: number): Promise<UserEntity> {
+    const user = await this.prismaService.user.findUnique({
+      where: {
+        id: id,
+      },
+      include: {
+        role: true,
+      },
+    });
+
+    if (!user) {
+      throw new NotFoundException('User does not exist');
+    }
+
+    return UserEntity.fromModel(user);
+  }
 }
