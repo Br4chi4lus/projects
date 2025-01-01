@@ -4,12 +4,14 @@ import { ProjectsService } from '../projects/projects.service';
 import { CreateTaskDTO } from './dtos/create.task.dto';
 
 import { TaskEntity } from './entities/task.entity';
+import { ProjectUsersService } from '../project-users/project-users.service';
 
 @Injectable()
 export class TasksService {
   constructor(
     private readonly prismaService: PrismaService,
     private readonly projectService: ProjectsService,
+    private readonly projectUsersService: ProjectUsersService,
   ) {}
 
   public async getTasks(projectId: number) {
@@ -71,6 +73,10 @@ export class TasksService {
     projectId: number,
   ): Promise<TaskEntity> {
     try {
+      const users = await this.projectUsersService.findAll(projectId);
+      if (!users.some((user) => user.id === createTaskDto.userId)) {
+        throw new NotFoundException('User is not asign to the project');
+      }
       const task = await this.prismaService.task.create({
         data: {
           name: createTaskDto.name,

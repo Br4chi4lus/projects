@@ -4,14 +4,17 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TasksModule } from './tasks/tasks.module';
 import { AuthModule } from './auth/auth.module';
-import { APP_GUARD } from '@nestjs/core';
-import { RolesGuard } from './auth/guards/roles.guard';
-import { PassportModule } from '@nestjs/passport';
-import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 import { ProjectsModule } from './projects/projects.module';
+import { ProjectUsersModule } from './project-users/project-users.module';
 
 @Module({
-  imports: [UsersModule, TasksModule, AuthModule, ProjectsModule],
+  imports: [
+    UsersModule,
+    TasksModule,
+    AuthModule,
+    ProjectsModule,
+    ProjectUsersModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
