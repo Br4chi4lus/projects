@@ -19,14 +19,25 @@ import { RolesGuard } from '../auth/guards/roles.guard';
 import { Roles } from '../auth/decorators/roles.decorator';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { ChangeUserRoleDto } from './dtos/change.user.role.dto';
+import {
+  ApiBearerAuth,
+  ApiNotFoundResponse,
+  ApiOkResponse,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
 
 @Controller('users')
+@ApiBearerAuth()
+@ApiUnauthorizedResponse({
+  description: 'Unauthorized user, insufficient credentials',
+})
 @UseGuards(JwtAuthGuard, RolesGuard)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get()
-  @Roles('User', 'Admin')
+  @Roles('Manager', 'Admin')
+  @ApiOkResponse({ description: 'Returns all users' })
   public async getUsers(): Promise<UserDTO[]> {
     const users: UserEntity[] = await this.usersService.findAll();
     return users.map<UserDTO>((user) => UserDTO.fromEntity(user));
@@ -34,6 +45,8 @@ export class UsersController {
 
   @Put(':userId')
   @Roles('Admin')
+  @ApiOkResponse({ description: 'Updated users role' })
+  @ApiNotFoundResponse({ description: 'User/Role was not found' })
   public async updateRole(
     @Param('userId', new ParseIntPipe()) userId: number,
     @Body() dto: ChangeUserRoleDto,

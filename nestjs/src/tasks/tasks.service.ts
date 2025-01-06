@@ -101,7 +101,7 @@ export class TasksService {
       if (
         error.message.toLowerCase().includes('foreign key constraint violated')
       ) {
-        throw new NotFoundException('Project not found');
+        throw new NotFoundException('Project or User not found');
       } else {
         throw error;
       }

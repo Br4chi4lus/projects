@@ -1,12 +1,18 @@
 import { UserDTO } from '../../users/dtos/user.dto';
 
 import { TaskEntity } from '../entities/task.entity';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class TaskDTO {
+  @ApiProperty()
   id: number;
+  @ApiProperty()
   name: string;
+  @ApiProperty()
   description: string;
+  @ApiProperty()
   user: UserDTO;
+  @ApiProperty()
   state: string;
 
   constructor(
