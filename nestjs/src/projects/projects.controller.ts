@@ -19,13 +19,26 @@ import { UserEntity } from '../users/entities/user.entity';
 import { OwnershipGuard } from '../auth/guards/ownership.guard';
 import { StateOfProjectDTO } from './dtos/state-of-project.dto';
 import { ParticipantGuard } from '../auth/guards/participant.guard';
+import {
+  ApiBearerAuth,
+  ApiCreatedResponse,
+  ApiNotFoundResponse,
+  ApiOkResponse,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
 @UseGuards(JwtAuthGuard, RolesGuard)
+@ApiBearerAuth()
+@ApiUnauthorizedResponse({
+  description: 'Unauthorized user, insufficient credentials',
+})
 @Controller('projects')
 export class ProjectsController {
   constructor(private readonly projectService: ProjectsService) {}
 
   @Post()
   @Roles('Manager', 'Admin')
+  @ApiCreatedResponse({ description: 'New project has been created' })
+  @ApiNotFoundResponse({ description: 'Some of the users were not found' })
   async create(
     @Body() dto: CreateProjectDTO,
     @Req() request,
@@ -37,6 +50,7 @@ export class ProjectsController {
 
   @Roles('Admin')
   @Get()
+  @ApiOkResponse({ description: 'Projects have been successfully retrieved' })
   async findAll(): Promise<ProjectDTO[]> {
     const projects = await this.projectService.findAll();
     return projects.map((project) => ProjectDTO.fromEntity(project));
@@ -44,6 +58,8 @@ export class ProjectsController {
 
   @Get(':projectId')
   @UseGuards(ParticipantGuard)
+  @ApiOkResponse({ description: 'Project has been successfully retrieved' })
+  @ApiNotFoundResponse({ description: 'Project was not found' })
   async findOne(
     @Param('projectId', new ParseIntPipe()) projectId: number,
   ): Promise<ProjectDTO> {
@@ -54,6 +70,7 @@ export class ProjectsController {
 
   @UseGuards(OwnershipGuard)
   @Put(':projectId')
+  @ApiNotFoundResponse({ description: 'Project/State was not found' })
   async updateStateOfProject(
     @Param('projectId', new ParseIntPipe()) projectId: number,
     @Body() dto: StateOfProjectDTO,

@@ -2,16 +2,26 @@ import { UserDTO } from '../../users/dtos/user.dto';
 import { ProjectEntity } from '../entities/project.entity';
 import { StateOfProjectDTO } from './state-of-project.dto';
 import { TaskDTO } from '../../tasks/dtos/task.dto';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class ProjectDTO {
+  @ApiProperty()
   id: number;
+  @ApiProperty()
   name: string;
+  @ApiProperty()
   description: string;
+  @ApiProperty()
   manager: UserDTO;
+  @ApiProperty({ type: [UserDTO] })
   users: UserDTO[];
+  @ApiProperty()
   state: StateOfProjectDTO;
+  @ApiProperty()
   dateOfCreation: Date;
+  @ApiProperty()
   dateOfModified: Date;
+  @ApiProperty({ type: [TaskDTO] })
   tasks: TaskDTO[];
 
   constructor(
