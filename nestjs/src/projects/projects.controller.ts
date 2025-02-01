@@ -48,14 +48,19 @@ export class ProjectsController {
     return ProjectDTO.fromEntity(project);
   }
 
-  @Roles('Admin')
+  @Roles('Admin', 'Manager')
   @Get()
   @ApiOkResponse({ description: 'Projects have been successfully retrieved' })
   async findAll(): Promise<ProjectDTO[]> {
     const projects = await this.projectService.findAll();
     return projects.map((project) => ProjectDTO.fromEntity(project));
   }
+  @Get('states')
+  async getAllStatesOfProject(): Promise<StateOfProjectDTO[]> {
+    const states = await this.projectService.findAllStates();
 
+    return states.map((state) => StateOfProjectDTO.fromEntity(state));
+  }
   @Get(':projectId')
   @UseGuards(ParticipantGuard)
   @ApiOkResponse({ description: 'Project has been successfully retrieved' })
