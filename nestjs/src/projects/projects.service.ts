@@ -2,6 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
 import { CreateProjectDTO } from './dtos/create.project.dto';
 import { ProjectEntity } from './entities/project.entity';
+import { StateOfProjectDTO } from './dtos/state-of-project.dto';
+import { StateOfProjectEntity } from './entities/state-of-project.entity';
 
 @Injectable()
 export class ProjectsService {
@@ -185,5 +187,11 @@ export class ProjectsService {
         dateOfModified: new Date(),
       },
     });
+  }
+
+  public async findAllStates() {
+    const states = await this.prismaService.stateOfProject.findMany();
+
+    return states.map((state) => StateOfProjectEntity.fromModel(state));
   }
 }

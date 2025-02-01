@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="adac4a8b-3e9e-41df-97dc-e6c4d117ecac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/project-users/dtos/add.user.to.project.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/project-users/dtos/add.user.to.project.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/project-users/project-users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/project-users/project-users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/projects/dtos/create.project.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/projects/dtos/create.project.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/projects/dtos/project.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/projects/dtos/project.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/projects/dtos/state-of-project.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/projects/dtos/state-of-project.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/projects/projects.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/projects/projects.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/projects/projects.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/projects/projects.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/tasks/dtos/create.task.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/tasks/dtos/create.task.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/tasks/dtos/task.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/tasks/dtos/task.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/tasks/tasks.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/tasks/tasks.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/tasks/tasks.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/tasks/tasks.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/tasks/tasks.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/tasks/tasks.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/users/dtos/change.password.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/users/dtos/change.password.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/users/dtos/change.user.role.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/users/dtos/change.user.role.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/users/dtos/create.user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/users/dtos/create.user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/users/dtos/login.user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/users/dtos/login.user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/users/dtos/role.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/users/dtos/role.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/users/dtos/user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/users/dtos/user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nestjs/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../nestjs/src/users/users.controller.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2rimKhqve9w2BRVlY1XaoRJnrWy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;frontend-creation&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tomek/Desktop/restAPI/tasks/frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Tomek\\Desktop\\restAPI\\tasks\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tomek\Desktop\restAPI\tasks\frontend\src\pages\projects\[id]" />
+      <recent name="C:\Users\Tomek\Desktop\restAPI\tasks\frontend\src\pages\projects" />
+      <recent name="C:\Users\Tomek\Desktop\restAPI\tasks\frontend\src\pages\account" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="adac4a8b-3e9e-41df-97dc-e6c4d117ecac" name="Changes" comment="" />
+      <created>1737050209913</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737050209913</updated>
+      <workItem from="1737050211520" duration="31000" />
+      <workItem from="1737050243898" duration="1864000" />
+      <workItem from="1737139909672" duration="14646000" />
+      <workItem from="1737205827119" duration="5538000" />
+      <workItem from="1737311745349" duration="9798000" />
+      <workItem from="1737556320018" duration="7217000" />
+      <workItem from="1737579709147" duration="3243000" />
+      <workItem from="1737815659141" duration="6257000" />
+      <workItem from="1737831035928" duration="3990000" />
+      <workItem from="1737918972446" duration="11605000" />
+      <workItem from="1737987744913" duration="3628000" />
+      <workItem from="1738440746584" duration="1351000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/types/role.dto.ts</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/change-role/[id].tsx</url>
+          <line>6</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

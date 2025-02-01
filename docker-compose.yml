@@ -20,7 +20,9 @@ services:
   app:
     image: tasks:latest
     environment:
-      - DATABASE_URL=postgresql://postgres:password@host.docker.internal:5432/tasks?schema=public
+      - DATABASE_URL=postgresql://postgres:password@db:5432/tasks
+    depends_on:
+      - db
     ports:
       - '8080:3000'
 volumes:
