@@ -33,6 +33,8 @@ Linux:
 ```
 DATABASE_URL="postgresql://postgres:password@localhost:5432/tasks" npx prisma migrate dev --name init
 ```
+Both:
+```
 npm run seed
 ```
 And run app container(docker desktop) or stop all containers and:
