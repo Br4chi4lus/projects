@@ -24,7 +24,16 @@ docker compose up
 At first the app container will stop. You need to update database(do not stop db container):
 ```
 cd nestjs
-prisma migrate dev
+```
+Windows CMD:
+```
+set DATABASE_URL=postgresql://postgres:password@localhost:5432/tasks && npx prisma migrat
+e dev
+```
+Linux:
+```
+DATABASE_URL="postgresql://postgres:password@localhost:5432/tasks" npx prisma migrate dev --name init
+```
 npm run seed
 ```
 And run app container(docker desktop) or stop all containers and:
