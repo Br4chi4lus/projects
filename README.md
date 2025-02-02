@@ -6,6 +6,7 @@
 ## About the project
 Simple REST API and frontend that helps managing projects and tasks.
 ## Technologies
+* Node.js v22.11.0
 * Backend is created with nestjs and prisma(ORM)
 * Frontend is created with nextjs - React framework
 * Docker
