@@ -44,6 +44,8 @@ docker compose up
 once again.
 ### Frontend:
 ```
+cd frontend
+npm install
 npm run dev
 ```
 To change role of first user you need to use pgadmin. Credentials are in docker-compose.yml file. Connecting to database with pgAdmin in given docker-compose.yml:
