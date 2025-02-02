@@ -27,8 +27,7 @@ cd nestjs
 ```
 Windows CMD:
 ```
-set DATABASE_URL=postgresql://postgres:password@localhost:5432/tasks && npx prisma migrat
-e dev
+set DATABASE_URL=postgresql://postgres:password@localhost:5432/tasks && npx prisma migrate dev
 ```
 Linux:
 ```
